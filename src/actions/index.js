@@ -3,6 +3,15 @@ import axios from "axios";
 export const FETCH_SMURFS = "FETCH_STARTS";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 
+export const getSmurfs = () => {
+  return (dispatch) => {
+    dispatch(fetchSmurfs());
+    axios.get("http://localhost:3333/smurfs").then((res) => {
+      dispatch(fetchSuccess(res.data));
+    });
+  };
+};
+
 export const fetchSmurfs = () => {
   return { type: FETCH_SMURFS };
 };

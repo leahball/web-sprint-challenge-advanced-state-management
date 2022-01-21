@@ -2,7 +2,7 @@ import React from "react";
 import Smurf from "./Smurf";
 import { connect } from "react-redux";
 
-const SmurfList = () => {
+const SmurfList = (props) => {
   const isLoading = false;
   const { smurfs } = props;
 
