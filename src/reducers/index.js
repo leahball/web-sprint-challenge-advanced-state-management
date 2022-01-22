@@ -14,6 +14,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_START:
       return {
         ...state,
+        smurfs: [],
         loading: true,
         error: "",
       };
@@ -30,15 +31,17 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
       };
     case ADD_SMURF:
-      const addSmurf = {
-        name: action.payload,
-        nickname: action.payload,
-        position: action.payload,
-        summary: action.payload,
-      };
+      //   const addSmurf = {
+      //     name: action.payload,
+      //     nickname: action.payload,
+      //     position: action.payload,
+      //     summary: action.payload,
+      //   };
       return {
         ...state,
-        smurfs: [...state.smurfs, addSmurf],
+        smurfs: [...state.smurfs, action.payload],
+        loading: false,
+        error: action.payload,
       };
     default:
       return state;
