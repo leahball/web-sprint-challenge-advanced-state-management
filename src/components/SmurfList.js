@@ -3,10 +3,9 @@ import Smurf from "./Smurf";
 import { connect } from "react-redux";
 
 const SmurfList = (props) => {
-  const isLoading = false;
-  const { smurfs } = props;
+  const { smurfs, loading } = props;
 
-  if (isLoading) {
+  if (loading) {
     return <h1>Loading...</h1>;
   }
 
@@ -22,6 +21,7 @@ const SmurfList = (props) => {
 const mapStateToProps = (state) => {
   return {
     smurfs: state.smurfs,
+    loading: state.loading,
   };
 };
 

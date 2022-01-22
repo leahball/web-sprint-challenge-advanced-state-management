@@ -11,7 +11,7 @@ import "./App.css";
 const App = (props) => {
   useEffect(() => {
     props.fetchSmurfs();
-  }, []);
+  });
 
   return (
     <div className="App">
